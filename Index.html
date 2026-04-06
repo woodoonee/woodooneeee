@@ -1,0 +1,253 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIRIN YOUTH - 초월적 성장</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #ff003c;
+            --deep-black: #080808;
+            --pure-white: #ffffff;
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: var(--pure-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: -0.05em;
+        }
+
+        .font-huge {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* 강렬한 사선 디자인 */
+        .slash-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slash-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 120%;
+            height: 100%;
+            background: var(--primary-red);
+            transform: skewY(-5deg);
+            z-index: -1;
+        }
+
+        /* 날카로운 버튼 */
+        .sharp-btn {
+            position: relative;
+            background: var(--primary-red);
+            color: white;
+            font-weight: 900;
+            padding: 1.5rem 3rem;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: inline-block;
+        }
+
+        .sharp-btn:hover {
+            transform: scale(1.05) skewX(-5deg);
+            background: white;
+            color: black;
+        }
+
+        /* 텍스트 스트로크 효과 */
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        /* 마우스 호버 시 글래스모피즘 카드 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .glass-card:hover {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+            transform: translateY(-20px);
+        }
+
+        /* 커스텀 커서/포인트 애니메이션 */
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--primary-red);
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        @keyframes scroll-line {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            51% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        .scroll-indicator {
+            width: 2px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            position: relative;
+        }
+
+        .scroll-indicator::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--primary-red);
+            animation: scroll-line 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center">
+        <div class="font-huge text-2xl tracking-tighter">GIRIN<span class="text-[var(--primary-red)]">.</span></div>
+        <div class="flex gap-10 font-bold text-xs uppercase tracking-widest">
+            <a href="#vision" class="hover:text-[var(--primary-red)] transition-colors">Vision</a>
+            <a href="#action" class="hover:text-[var(--primary-red)] transition-colors">Action</a>
+            <a href="#join" class="hover:text-[var(--primary-red)] transition-colors">Join</a>
+        </div>
+    </nav>
+
+    <!-- Main Hero -->
+    <section class="relative min-h-screen flex flex-col justify-center px-8 md:px-20 pt-20">
+        <div class="mb-4 flex items-center">
+            <span class="dot"></span>
+            <span class="uppercase tracking-widest text-xs font-black text-[var(--primary-red)]">Since 2004 / Yangcheon</span>
+        </div>
+        <h1 class="font-huge text-[12vw] md:text-[10vw] leading-[0.85] mb-10">
+            STRONGER<br>
+            <span class="outline-text">BEYOND</span><br>
+            LIMITS
+        </h1>
+        <p class="max-w-xl text-lg md:text-xl text-gray-400 mb-12 font-medium">
+            우리는 아이들의 가능성을 제한하지 않습니다. <br>
+            기린청소년 지역아동센터는 가장 높은 곳을 바라보는 청소년들의 단단한 지지대입니다.
+        </p>
+        <div>
+            <a href="#join" class="sharp-btn">지금 합류하라</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <span class="text-[10px] uppercase tracking-widest mb-4 opacity-50">Scroll</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-40 px-8 md:px-20 bg-white text-black slash-bg">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <h2 class="font-huge text-7xl md:text-8xl leading-none italic">WE<br>RAISE<br>GIANTS</h2>
+                <div class="text-xl md:text-2xl font-bold leading-tight">
+                    단순한 보호를 넘어, 사회의 주역으로 성장하는 압도적인 에너지를 만듭니다. 우리는 청소년들이 스스로의 삶을 주도하는 '거인'이 되도록 교육합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Section -->
+    <section id="action" class="py-40 px-8 md:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <h2 class="font-huge text-6xl md:text-7xl">OUR ACTION</h2>
+                <p class="text-gray-500 uppercase tracking-widest text-sm font-bold">What we do for growth</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-1">
+                <div class="glass-card p-12 min-h-[400px] flex flex-col justify-between">
+                    <div>
+                        <div class="text-[var(--primary-red)] font-huge text-4xl mb-6">01</div>
+                        <h3 class="font-huge text-2xl mb-4">지식의 확장</h3>
+                        <p class="text-gray-400 font-medium">학습은 무기가 됩니다. 기초부터 심화까지, 스스로 생각하는 힘을 기릅니다.</p>
+                    </div>
+                    <div class="text-xs uppercase font-bold tracking-widest opacity-30 group-hover:opacity-100">Study Core</div>
+                </div>
+                <div class="glass-card p-12 min-h-[400px] flex flex-col justify-between">
+                    <div>
+                        <div class="text-[var(--primary-red)] font-huge text-4xl mb-6">02</div>
+                        <h3 class="font-huge text-2xl mb-4">문화의 경험</h3>
+                        <p class="text-gray-400 font-medium">더 넓은 세상이 있다는 것을 증명합니다. 다양한 문화 활동으로 시야를 넓힙니다.</p>
+                    </div>
+                    <div class="text-xs uppercase font-bold tracking-widest opacity-30">Experience</div>
+                </div>
+                <div class="glass-card p-12 min-h-[400px] flex flex-col justify-between">
+                    <div>
+                        <div class="text-[var(--primary-red)] font-huge text-4xl mb-6">03</div>
+                        <h3 class="font-huge text-2xl mb-4">정서적 연대</h3>
+                        <p class="text-gray-400 font-medium">혼자가 아님을 깨닫는 것에서 진정한 강함이 나옵니다. 든든한 공동체가 여기 있습니다.</p>
+                    </div>
+                    <div class="text-xs uppercase font-bold tracking-widest opacity-30">Community</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="join" class="py-40 px-8 md:px-20 bg-[var(--primary-red)]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="font-huge text-6xl md:text-9xl mb-12 leading-none text-black">GET IN<br>TOUCH</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="border-b-4 border-black pb-8">
+                    <p class="text-black uppercase font-black text-sm tracking-tighter mb-2">Location</p>
+                    <p class="text-white font-huge text-xl">서울시 양천구 목동중앙본로 50</p>
+                </div>
+                <div class="border-b-4 border-black pb-8">
+                    <p class="text-black uppercase font-black text-sm tracking-tighter mb-2">Call us</p>
+                    <p class="text-white font-huge text-xl">02-2647-7179</p>
+                </div>
+            </div>
+            <div class="mt-20">
+                <a href="tel:02-2647-7179" class="bg-black text-white font-huge px-16 py-6 text-2xl hover:bg-white hover:text-black transition-all inline-block">
+                    CONNECT NOW
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-8 text-center text-[10px] text-gray-700 font-bold uppercase tracking-[0.3em]">
+        &copy; GIRIN YOUTH CENTER. ALL RIGHTS RESERVED. BOLD GROWTH ONLY.
+    </footer>
+
+    <script>
+        // 스크롤 시 나타나는 애니메이션
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'translate-y-10');
+        });
+    </script>
+</body>
+</html>
+
+```
